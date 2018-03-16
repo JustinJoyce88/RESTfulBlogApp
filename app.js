@@ -5,7 +5,8 @@ var express = require("express"),
   expressSanitizer = require("express-sanitizer"),
   app = express();
 
-mongoose.connect("mongodb://localhost/resful_blog_app");
+var url = provess.env.DBURL || "mongodb://localhost/resful_blog_app";
+mongoose.connect(url);
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
