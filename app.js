@@ -5,7 +5,7 @@ var express = require("express"),
   expressSanitizer = require("express-sanitizer"),
   app = express();
 
-var url = provess.env.DBURL || "mongodb://localhost/resful_blog_app";
+var url = process.env.DBURL || "mongodb://localhost/resful_blog_app";
 mongoose.connect(url);
 app.set("view engine", "ejs");
 app.use(express.static("public"));
